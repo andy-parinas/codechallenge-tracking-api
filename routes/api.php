@@ -7,17 +7,4 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('v1')->group(function(){
-
-    Route::prefix('users/{userId}')->group(function(){
-
-        Route::prefix('deliveries')->group(function(){
-            Route::get('/', [UserDeliveryController::class, 'index'])->name('users.deliveries.list');
-            Route::get('{deliveryId}', [UserDeliveryController::class, 'show'])->name('users.deliveries.show');
-
-        });
-
-    });
-
-
-});
+Route::get('/delivery-status/{tracking_number}', [DeliveryController::class, 'deliveryStatus']);

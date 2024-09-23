@@ -27,7 +27,7 @@ class UserDeliveryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $userId, string $deliveryNumber)
+    public function show(string $deliveryNumber)
     {
         return response()->json(['status'=> 'ok', 'delivery' => $deliveryNumber], 200);
     }
